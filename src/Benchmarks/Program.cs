@@ -10,9 +10,9 @@ using App.Metrics.DotNetRuntime.StatsCollectors.Util;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Environments;
-using BenchmarkDotNet.Horology;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
+using Perfolizer.Horology;
 
 
 namespace Benchmarks

@@ -1,4 +1,3 @@
-using System;
 using System.Diagnostics.Tracing;
 using App.Metrics.DotNetRuntime.EventSources;
 using App.Metrics.DotNetRuntime.StatsCollectors.Util;
@@ -36,7 +35,7 @@ namespace App.Metrics.DotNetRuntime.StatsCollectors
 
         public EventKeywords Keywords => (EventKeywords) DotNetRuntimeEventSource.Keywords.Jit;
         public EventLevel Level => EventLevel.Verbose;
-        public Guid EventSourceGuid => DotNetRuntimeEventSource.Id;
+        public string EventSourceName => DotNetRuntimeEventSource.Name;
 
         public void ProcessEvent(EventWrittenEventArgs e)
         {

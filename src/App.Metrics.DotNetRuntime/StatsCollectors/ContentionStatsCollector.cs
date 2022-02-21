@@ -31,7 +31,7 @@ namespace App.Metrics.DotNetRuntime.StatsCollectors
 
         public EventKeywords Keywords => (EventKeywords)DotNetRuntimeEventSource.Keywords.Contention;
         public EventLevel Level => EventLevel.Informational;
-        public Guid EventSourceGuid => DotNetRuntimeEventSource.Id;
+        public string EventSourceName => DotNetRuntimeEventSource.Name;
         
         public void ProcessEvent(EventWrittenEventArgs e)
         {

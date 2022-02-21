@@ -16,7 +16,7 @@ namespace App.Metrics.DotNetRuntime
         private readonly bool _enableDebugging;
         private readonly IMetrics _metrics;
 
-        internal DotNetEventListener(IEventSourceStatsCollector collector, Action<Exception> errorHandler, bool enableDebugging, IMetrics metrics) : base()
+        public DotNetEventListener(IEventSourceStatsCollector collector, Action<Exception> errorHandler, bool enableDebugging, IMetrics metrics) : base()
         {
             _collector = collector;
             _errorHandler = errorHandler;
@@ -49,7 +49,7 @@ namespace App.Metrics.DotNetRuntime
         private void OnEventSourceCreated(object sender, EventSourceCreatedEventArgs e)
         {
             var es = e.EventSource;
-            if (es.Guid == _collector.EventSourceGuid)
+            if (es.Name == _collector.EventSourceName)
             {
                 EnableEvents(es, _collector.Level, _collector.Keywords);
                 StartedReceivingEvents = true;

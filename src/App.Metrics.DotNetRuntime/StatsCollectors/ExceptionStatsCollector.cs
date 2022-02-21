@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.Tracing;
+﻿using System.Diagnostics.Tracing;
 using App.Metrics.DotNetRuntime.EventSources;
 
 namespace App.Metrics.DotNetRuntime.StatsCollectors
@@ -14,7 +13,7 @@ namespace App.Metrics.DotNetRuntime.StatsCollectors
             _metrics = metrics;
         }
 
-        public Guid EventSourceGuid => DotNetRuntimeEventSource.Id;
+        public string EventSourceName => DotNetRuntimeEventSource.Name;
         public EventKeywords Keywords => (EventKeywords) DotNetRuntimeEventSource.Keywords.Exception;
         public EventLevel Level => EventLevel.Verbose;
 

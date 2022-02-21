@@ -50,7 +50,7 @@ namespace App.Metrics.DotNetRuntime.StatsCollectors
             _metrics = metrics;
         }
 
-        public Guid EventSourceGuid => DotNetRuntimeEventSource.Id;
+        public string EventSourceName => DotNetRuntimeEventSource.Name;
         public EventKeywords Keywords => (EventKeywords) DotNetRuntimeEventSource.Keywords.GC;
         public EventLevel Level => EventLevel.Verbose;
 

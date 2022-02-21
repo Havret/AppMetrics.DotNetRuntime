@@ -28,7 +28,7 @@ namespace App.Metrics.DotNetRuntime.StatsCollectors
 
         public EventKeywords Keywords => (EventKeywords) (FrameworkEventSource.Keywords.ThreadPool);
         public EventLevel Level => EventLevel.Verbose;
-        public Guid EventSourceGuid => FrameworkEventSource.Id;
+        public string EventSourceName => DotNetRuntimeEventSource.Name;
         
         public void ProcessEvent(EventWrittenEventArgs e)
         {

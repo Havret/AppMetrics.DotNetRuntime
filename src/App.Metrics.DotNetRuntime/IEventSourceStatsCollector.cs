@@ -10,9 +10,9 @@ namespace App.Metrics.DotNetRuntime
     public interface IEventSourceStatsCollector
     {
         /// <summary>
-        /// The unique id of the event source to receive events from.
+        /// The name of the event source to receive events from.
         /// </summary>
-        Guid EventSourceGuid { get; }
+        public string EventSourceName { get; }
         
         /// <summary>
         /// The keywords to enable in the event source.
